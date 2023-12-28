@@ -1,7 +1,7 @@
 name: On PR open/edit/reopen run lint and tests
 on:
   pull_request:
-    types: [opened, edited, reopened]
+    types: [opened, synchronize, reopened]
 jobs:
   lint:
     runs-on: ubuntu-latest

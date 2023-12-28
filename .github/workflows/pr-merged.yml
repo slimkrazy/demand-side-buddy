@@ -1,9 +1,10 @@
 name: On PR merge run tests
 on:
   pull_request:
-    types: [merged]
+    - closed
 jobs:
   test:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
