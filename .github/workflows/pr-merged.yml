@@ -13,4 +13,11 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm test
+      - run: npx playwright install --with-deps
       - run: npm run test-e2e
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-results
+          path: playwright-results/
+          retention-days: 5
