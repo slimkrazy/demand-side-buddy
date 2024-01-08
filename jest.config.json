@@ -1,6 +1,16 @@
 {
   "preset": "ts-jest",
   "testEnvironment": "jsdom",
+  "collectCoverage": true,
+  "coverageDirectory": "test-results",
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": 80
+    }
+  },
   "roots": [
     "src"
   ]

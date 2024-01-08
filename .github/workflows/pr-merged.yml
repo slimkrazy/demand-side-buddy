@@ -1,7 +1,7 @@
 name: On PR merge run tests
 on:
   pull_request:
-    - closed
+    types: [closed]
 jobs:
   test:
     if: github.event.pull_request.merged == true
