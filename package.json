@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build-lib": "tsc && LIB_OUTPUT=true vite build",
     "preview": "vite preview",
-    "lint": "eslint src/*.ts",
+    "lint": "eslint src/*.ts lib/*.ts",
     "test": "jest",
     "test-e2e": "playwright test",
     "test-e2e-ui": "playwright test --ui"
@@ -26,5 +27,11 @@
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.js",
+      "require": "./dist/my-lib.umd.cjs"
+    }
   }
 }
