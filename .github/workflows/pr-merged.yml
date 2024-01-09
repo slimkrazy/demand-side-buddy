@@ -1,20 +1,10 @@
-name: On PR open/edit/reopen run lint and tests
+name: On PR merge run tests
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [closed]
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - run: npm ci
-      - run: npm run lint
-
   test:
-    needs: lint
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
