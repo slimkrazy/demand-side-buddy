@@ -11,9 +11,12 @@
     "lint": "eslint src/*.ts lib/*.ts",
     "test": "jest",
     "test-e2e": "playwright test",
-    "test-e2e-ui": "playwright test --ui"
+    "test-e2e-ui": "playwright test --ui",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "18.4.4",
+    "@commitlint/config-conventional": "18.4.4",
     "@playwright/test": "^1.40.1",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.5",
@@ -26,6 +29,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "husky": "^8.0.0"
   }
 }
