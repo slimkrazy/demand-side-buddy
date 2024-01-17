@@ -1,8 +1,11 @@
 env:
   browser: true
-  es2021: true
+  es2020: true
 extends: standard-with-typescript
 parserOptions:
-  ecmaVersion: latest
+  ecmaVersion: 2020
   sourceType: module
-rules: {}
+rules: {
+  import/no-absolute-path: off
+}
+
